@@ -79,7 +79,7 @@ exports.publish = function publish(path,moduleName,serverRequest,addUser){
             filePath = pathSys.normalize("./"+ filesZip[fileName]);
             fileArray.push({name:filesZip[fileName],path:filePath});
         }
-        console.log("d: "+fileArray);
+        //console.log("d: "+fileArray);
 
         archive.addFiles(fileArray, function (err) {
             if (err) return console.log("err while adding files", err);
@@ -109,6 +109,4 @@ exports.publish = function publish(path,moduleName,serverRequest,addUser){
             });
         });
     }
-
-
 }

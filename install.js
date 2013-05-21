@@ -3,7 +3,7 @@ exports.install = function install(path,moduleName,serverRequest){
     var fs = require("fs"),
         url = require('url'),
         http = require('http'),
-        fstream = require("fstream"),
+        //fstream = require("fstream"),
         unzip = require("unzip");
 
     //下载文件
@@ -26,8 +26,8 @@ exports.install = function install(path,moduleName,serverRequest){
             file.write(data);
         }).on('end', function() {
             file.end();
-            //解压到本地目录jquery_modules
-            fs.createReadStream(file_name).pipe(unzip.Extract({ path: './' }));
+            //解压到本地目录jquery_modules    ---这里几个zip解压的插件都不能用，fuck，就先只能下载以后自行解压了
+            //fs.createReadStream(file_name).pipe(unzip.Extract({ path: './' }));
 /*            var readStream = fs.createReadStream('./' + file_name);
             var writeStream = fstream.Writer('./');
 
